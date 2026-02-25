@@ -190,6 +190,18 @@ export default function DashboardOverview() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {/* Add new article card */}
+          <button
+            onClick={() => { setEditRecord(null); setDialogOpen(true); }}
+            className="group flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-border bg-card hover:border-primary hover:bg-primary/5 transition-all min-h-[260px] cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-full bg-muted group-hover:bg-primary/10 flex items-center justify-center transition-colors">
+              <Plus size={22} className="text-muted-foreground group-hover:text-primary transition-colors" />
+            </div>
+            <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors">
+              Artikel einstellen
+            </span>
+          </button>
           {filtered.map((item) => (
             <ArticleCard
               key={item.record_id}
